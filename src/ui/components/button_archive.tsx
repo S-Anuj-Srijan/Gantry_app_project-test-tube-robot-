@@ -3,7 +3,7 @@ import "./button_archive.css"
 function Button_archive(){
     return (
         <>
-            <button class="archive-btn">Archive</button>
+            <button className="archive-btn">Archive</button>
         </>
     );
 

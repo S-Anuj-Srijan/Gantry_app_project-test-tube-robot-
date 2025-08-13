@@ -3,7 +3,7 @@ import Cell from "./cell";
 function Table(){
     return (
         <>
-            <table border="1">
+            <table>
                 <thead>
                     <tr>
                         <th>Header 1</th>

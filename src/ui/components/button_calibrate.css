@@ -1,4 +1,4 @@
-.archive-btn {
+.calibrate-btn {
     background-color: #4CAF50; /* Green background */
     color: white;              /* White text */
     padding: 10px 20px;         /* Space inside the button */
@@ -9,6 +9,6 @@
     transition: background-color 0.3s ease;
 }
 
-.archive-btn:hover {
+.calibrate-btn:hover {
     background-color: #45a049; /* Darker green on hover */
 }
