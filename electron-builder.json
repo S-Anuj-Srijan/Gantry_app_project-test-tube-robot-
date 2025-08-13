@@ -1,0 +1,16 @@
+{
+    "appId":"com.s_anuj_srijan.Gantry",
+    "files":["dist-electron","dist-react"],
+    "icon":"./desktopimg.png",
+    "mac":{
+        "target":"dmg"
+    },
+    "linux":{
+        "target":"AppImage",
+        "category":"Utility"
+
+    },
+    "win":{
+        "target":["portable","msi"]
+    }
+}
