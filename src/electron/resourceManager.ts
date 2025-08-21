@@ -1,12 +1,16 @@
-import osUtils from 'os-utils';
+import { PythonShell } from "python-shell";
+import path from "path";
+import { getScriptPath } from "./pathresolver.js";
 
-const POLLING_INTERVAL = 500;
-export function pollResources(){
-    setInterval(() => {
-        getcpuuseage();
-    },POLLING_INTERVAL);
-}
+export async function runPythonScript(scriptPath: string, args: string[] = []) {
+  const abs = path.isAbsolute(scriptPath) ? scriptPath : getScriptPath(scriptPath);
 
-function getcpuuseage(){
-    osUtils.cpuUsage((percentage)=>console.log(percentage));
+  const messages = await PythonShell.run(abs, {
+    args,
+    pythonOptions: ["-u"], // unbuffered for timely prints
+    // pythonPath: process.platform === "win32" ? "py" : "python3", // set if needed
+    // cwd: path.dirname(abs),
+  });
+
+  return messages; // array of stdout lines
 }

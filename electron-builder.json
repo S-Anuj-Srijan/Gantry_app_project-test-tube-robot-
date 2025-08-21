@@ -1,17 +1,11 @@
 {
-    "appId":"com.s_anuj_srijan.Gantry",
-    "files":["dist-electron","dist-react"],
-    "extraResources":["dist-electron/preload.cjs"],
-    "icon":"./desktopimg.png",
-    "mac":{
-        "target":"dmg"
-    },
-    "linux":{
-        "target":"AppImage",
-        "category":"Utility"
-
-    },
-    "win":{
-        "target":["portable","msi"]
-    }
+  "appId": "com.s_anuj_srijan.Gantry",
+  "files": ["dist-electron", "dist-react"],
+  "extraResources": [
+    { "from": "scripts/", "to": "scripts", "filter": ["**/*"] }
+  ],
+  "icon": "./desktopimg.png",
+  "mac": { "target": "dmg" },
+  "linux": { "target": "AppImage", "category": "Utility" },
+  "win": { "target": ["portable", "msi"] }
 }
