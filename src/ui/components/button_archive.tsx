@@ -7,7 +7,7 @@ function Button_archive() {
       return;
     }
 
-    const result = await window.api.runPython("src/ui/assets/scripts/hello.py", ["Anuj"]);
+    const result = await window.api.runPython("scripts/hello.py", ["Anuj"]);
     if (result.success) {
       console.log("Python output:", result.output);
       alert(result.output?.join("\n") || "No output");

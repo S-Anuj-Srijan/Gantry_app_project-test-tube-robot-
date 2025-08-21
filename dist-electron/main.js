@@ -1,7 +1,8 @@
 import { app, BrowserWindow, ipcMain } from "electron";
 import path from "path";
+import fs from "fs";
 import { isDev } from "./util.js";
-import { getPreloadPath } from "./pathresolver.js";
+import { getPreloadPath, getScriptPath, debugPaths } from "./pathresolver.js";
 import { runPythonScript } from "./resourceManager.js";
 app.on("ready", () => {
     const mainWindow = new BrowserWindow({
@@ -14,6 +15,11 @@ app.on("ready", () => {
             sandbox: false
         },
     });
+    // Debug where things live
+    const dbg = debugPaths();
+    console.log("[PATHS]", dbg);
+    const testScriptPath = getScriptPath("scripts/hello.py");
+    console.log("[CHECK] script exists?", testScriptPath, fs.existsSync(testScriptPath));
     if (isDev()) {
         mainWindow.loadURL("http://localhost:5123");
     }
