@@ -1,6 +1,7 @@
 {
     "appId":"com.s_anuj_srijan.Gantry",
     "files":["dist-electron","dist-react"],
+    "extraResources":["dist-electron/preload.cjs"],
     "icon":"./desktopimg.png",
     "mac":{
         "target":"dmg"
